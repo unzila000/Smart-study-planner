@@ -1,0 +1,180 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ================= THEME VARIABLES ================= */
+:root {
+  --bg1: #667eea;
+  --bg2: #764ba2;
+  --card-bg: rgba(255,255,255,0.95);
+  --text: #222;
+  --input-bg: #fff;
+}
+
+body.dark {
+  --bg1: #0f2027;
+  --bg2: #203a43;
+  --card-bg: rgba(30,30,30,0.95);
+  --text: #f1f1f1;
+  --input-bg: #222;
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  padding: 30px;
+  color: var(--text);
+  background: linear-gradient(-45deg, var(--bg1), var(--bg2), #43cea2, #185a9d);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* ================= THEME TOGGLE ================= */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* ================= LAYOUT ================= */
+body > * {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= INPUTS ================= */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 10px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+/* ================= BUTTONS ================= */
+button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/* ================= CARDS ================= */
+#subjects > div,
+#todayPlan div,
+#weeklyPlan div {
+  background: var(--card-bg);
+  padding: 18px;
+  margin: 15px 0;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* ================= PROGRESS ================= */
+#overallProgress {
+  background: #ddd;
+  border-radius: 20px;
+  height: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  animation: growBar 1s ease forwards;
+}
+
+/* ================= FLOATING ICONS ================= */
+.floating-icons {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.icon {
+  position: absolute;
+  opacity: 0.25;
+  font-size: 32px;
+}
+
+.b1 { left: 2%; top: 10%; animation: float 8s infinite; }
+.b2 { left: 3%; top: 30%; animation: float 7s infinite; }
+.pen1 { left: 4%; top: 55%; animation: float 6s infinite; }
+.code1 { left: 5%; top: 75%; animation: float 5s infinite; }
+
+.b3 { right: 2%; top: 15%; animation: float 9s infinite; }
+.pen2 { right: 4%; top: 45%; animation: float 6s infinite; }
+.code2 { right: 5%; top: 70%; animation: float 5s infinite; }
+
+/* ================= ANIMATIONS ================= */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes growBar {
+  from { width: 0; }
+  to { width: var(--progress); }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .icon { display: none; }
+}
+/* ================= SUBJECT PROGRESS ================= */
+
+.subject-progress {
+  margin: 10px 0 15px;
+}
+
+.subject-progress-bar {
+  height: 14px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.subject-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  width: 0;
+  animation: growBar 1s ease forwards;
+}
+
+.subject-progress-text {
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: right;
+  opacity: 0.8;
+}

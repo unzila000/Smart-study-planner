@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+
+  <!-- SAFE CSS PATH FOR GITHUB -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- Dark mode toggle -->
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<!-- Floating Study Animations (SIDE BY SIDE) -->
+<div class="floating-icons">
+  <span class="icon b1">📘</span>
+  <span class="icon b2">📕</span>
+  <span class="icon b3">📗</span>
+
+  <span class="icon pen1">✏️</span>
+  <span class="icon pen2">🖊️</span>
+
+  <span class="icon code1">{ }</span>
+  <span class="icon code2">&lt;/&gt;</span>
+</div>
+
+<h2 id="welcome"></h2>
+
+<h3>Overall Progress</h3>
+<div id="overallProgress"></div>
+
+<h3>Today's Study Plan</h3>
+<div id="todayPlan"></div>
+
+<h3>This Week's Study Plan</h3>
+<div id="weeklyPlan"></div>
+
+<h3>Add Subject</h3>
+<input id="subjectName" placeholder="Subject name">
+<button onclick="submitSubject()">Add Subject</button>
+
+<h3>Subjects</h3>
+<div id="subjects"></div>
+
+<button onclick="logout()">Logout</button>
+
+<!-- SAFE JS PATH FOR GITHUB -->
+<script src="./js/app.js"></script>
+</body>
+</html>
