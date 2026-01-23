@@ -1,52 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Smart Study Planner</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-<h1>Smart Study Planner</h1>
-<p>Enter your details to start planning your studies.</p>
+<div class="container">
+  <h1>Smart Study Planner</h1>
+  <p>Enter your details to start planning your studies.</p>
 
-<label>
-  Name:
-  <input id="name" type="text" placeholder="Your name">
-</label>
-
-<br><br>
-
-<label>
-  Daily study hours:
-  <input id="hours" type="number" placeholder="e.g. 4">
-</label>
-
-<br><br>
-
-<!-- IMPORTANT: type="button" -->
-<button type="button" onclick="login()">Start Planning</button>
-
-<!-- IMPORTANT: JS FILE IS IN ROOT -->
-<script src="./app.js"></script>
-</body>
-</html>
-
+  <label>
+    Name:
+    <input id="name" type="text" placeholder="Your name" />
+  </label>
 
   <label>
     Daily study hours:
-    <input id="hours" type="number" placeholder="e.g. 4">
+    <input id="hours" type="number" placeholder="e.g. 4" />
   </label>
 
-  <br><br>
+  <button class="primary-btn" onclick="login()">Start Planning</button>
+</div>
 
-  <button onclick="login()">Start Planning</button>
-
-  <!-- JavaScript (IMPORTANT: relative path) -->
- <script src="/Smart-study-planner/app.js"></script>
+<script src="/Smart-study-planner/app.js"></script>
 </body>
 </html>
-
-
